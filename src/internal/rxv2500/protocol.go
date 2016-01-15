@@ -48,3 +48,5 @@ func (t *T) start() {
 		}
 	}
 }
+
+func (t *T) Close() { _ = t.t.Close() }
