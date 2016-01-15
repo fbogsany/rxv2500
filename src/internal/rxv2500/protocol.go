@@ -6,6 +6,12 @@ import (
 	"github.com/pkg/term"
 )
 
+const (
+	etx = '\x03'
+	dc1 = '\x11'
+	dc2 = '\x12'
+)
+
 type T struct {
 	t   *term.Term
 	err error
