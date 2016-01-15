@@ -15,7 +15,7 @@ func main() {
 }
 
 func run(tty string) {
-	t, err := term.Open(tty, term.RawMode)
+	t, err := rxv2500.Open(tty)
 	if err != nil {
 		fmt.Printf("error: %s", err)
 	}
