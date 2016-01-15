@@ -19,5 +19,5 @@ func run(tty string) {
 	if err != nil {
 		fmt.Printf("error: %s", err)
 	}
-	_ = t.Close()
+	t.Close()
 }
