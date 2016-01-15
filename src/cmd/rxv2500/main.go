@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/pkg/term"
+	"internal/rxv2500"
 )
 
 func main() {
