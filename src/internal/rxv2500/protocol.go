@@ -1,7 +1,13 @@
 package rxv2500
 
+import (
+	"time"
+
+	"github.com/pkg/term"
+)
+
 type T struct {
-	t *term.Term
+	t   *term.Term
 	err error
 }
 
@@ -24,7 +30,7 @@ func (t *T) ready() {
 }
 
 func (t *T) readConfiguration(timeout time.Duration) {
-	
+
 }
 
 func (t *T) start() {
