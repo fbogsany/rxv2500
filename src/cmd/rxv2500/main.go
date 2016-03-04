@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/pkg/term"
 	"internal/rxv2500"
 )
 

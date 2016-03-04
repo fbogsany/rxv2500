@@ -1,6 +1,7 @@
 package rxv2500
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/pkg/term"
@@ -36,7 +37,21 @@ func (t *T) ready() {
 }
 
 func (t *T) readConfiguration(timeout time.Duration) {
-
+	packet := make([]byte, 260)
+	count := 9
+	count, t.err = t.t.Read(packet[:count])
+	if t.err != nil {
+		return
+	}
+	if count != 9 {
+		// TODO
+	}
+	fmt.Printf("DC2: %x\n", packet[0])
+	fmt.Printf("ModelID: %s\n", string(packet[1:6]))
+	fmt.Printf("Version: %x\n", packet[6])
+	count = (int(packet[7]) << 8) | int(packet[8])
+	fmt.Printf("Length: %d\n", count)
+	count, t.err = t.t.Read(packet[:count+3])
 }
 
 func (t *T) start() {
